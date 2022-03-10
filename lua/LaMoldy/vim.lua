@@ -29,6 +29,10 @@ local function set_vim_o()
     vim.cmd('set shiftwidth=2')
     vim.cmd('set secure')
     vim.cmd('set tabstop=4')
+    vim.cmd('syntax on')
+    vim.cmd('set noswapfile')
+    vim.cmd('set signcolumn')
+    vim.cmd('set nomodeline')
 end
 
 local function set_vim_wo()
@@ -43,11 +47,18 @@ local function set_keymaps()
     local option1 = { noremap = false }
     local option2 = { noremap = true }
     local option3 = { noremap = true, silent = true }
+    local option4 = { silent = true }
 
+    -- Changing tabs
     map('n', '<leader>h', '<CMD>wincmd h<CR>', option1)
     map('n', '<leader>j', '<CMD>wincmd j<CR>', option1)
     map('n', '<leader>k', '<CMD>wincmd k<CR>', option1)
     map('n', '<leader>l', '<CMD>wincmd l<CR>', option1)
+
+    -- Changes zoom
+    map('n', '<leader>vr', 'vertical resize 30<CR>', option4)
+    map('n', '<leader>r+', ':vertical resize +5<CR>', option4)
+    map('n', '<leader>r-', ':vertical resize -5<CR>', option4)
 
     -- NERD TREE
     map('n', '<leader>tt', ':NERDTreeToggle<CR>', option2)
