@@ -63,6 +63,35 @@ local function packer_startup()
             require'LaMoldy.plugins.telescope'.init()
         end
     }
+
+    -- lsp
+    use {
+        'neovim/nvim-lspconfig',
+        config = function ()
+          require'LaMoldy.plugins.lspconfig'.init()
+        end
+    }
+
+    use 'williamboman/nvim-lsp-installer'
+
+    -- completion plugins
+    use {
+        'hrsh7th/nvim-cmp', -- Completion plugin
+        requires = {
+            'hrsh7th/cmp-nvim-lsp',
+            'onsails/lspkind-nvim',
+            'hrsh7th/cmp-cmdline',
+            'hrsh7th/cmp-path',
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip',
+            'ray-x/cmp-treesitter',
+        },
+        config = function ()
+            require 'LaMoldy.plugins.cmp'.init()
+            require 'LaMoldy.plugins.lspkind'.init()
+        end
+    }
 end
 
 local function init()

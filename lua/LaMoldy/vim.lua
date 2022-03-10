@@ -44,7 +44,7 @@ end
 
 local function set_keymaps()
     local map = vim.api.nvim_set_keymap
-    local option1 = { noremap = false }
+    local option1 = { noremap = false } 
     local option2 = { noremap = true }
     local option3 = { noremap = true, silent = true }
     local option4 = { silent = true }
