@@ -68,7 +68,6 @@ local function on_attach(client, bufnr)
       "sumneko_lua",
       "tsserver",
       "jdtls",
-      "jedi_language_server",
       "omnisharp",
       "volar",
     }
