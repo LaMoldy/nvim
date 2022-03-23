@@ -59,6 +59,9 @@ local function packer_startup()
     use 'nvim-lua/popup.nvim'
     use {
         'nvim-telescope/telescope.nvim',
+        requires = {
+            'windwp/nvim-ts-autotag'
+        },
         config = function ()
             require'LaMoldy.plugins.telescope'.init()
         end
