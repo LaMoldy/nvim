@@ -31,7 +31,6 @@ local function set_vim_o()
     vim.cmd('set tabstop=2')
     vim.cmd('syntax on')
     vim.cmd('set noswapfile')
-    vim.cmd('set signcolumn')
     vim.cmd('set nomodeline')
 end
 
