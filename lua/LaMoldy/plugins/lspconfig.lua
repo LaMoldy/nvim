@@ -70,7 +70,7 @@ local function on_attach(client, bufnr)
       "jdtls",
       "jedi_language_server",
       "omnisharp",
-      "volar"
+      "volar",
     }
   
     for _, server in pairs(lspconfig_servers) do

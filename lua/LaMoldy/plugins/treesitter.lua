@@ -1,29 +1,30 @@
 local function init()
+require 'nvim-treesitter.install'.compilers = { "clang" }
 require'nvim-treesitter.configs'.setup{
     ensure_installed = {
-    'bash',
-    'css',
-    'dockerfile',
-    'go',
-    'gomod',
-    'graphql',
-    'html',
-    'javascript',
-    'jsdoc',
-    'json',
-    'lua',
-    'python',
-    'rust',
-    'svelte',
-    'tsx',
-    'typescript',
-    'yaml',
+        'bash',
+        'css',
+        'dockerfile',
+        'go',
+        'gomod',
+        'graphql',
+        'html',
+        'javascript',
+        'jsdoc',
+        'json',
+        'lua',
+        'python',
+        'rust',
+        'svelte',
+        'tsx',
+        'typescript',
+        'yaml',
     },
     highlight = {
-    enable = true
+        enable = true
     },
     incremental_selection = {
-    enable = true,
+        enable = true,
     keymaps = {
         init_selection = "gnn",
         node_incremental = "grn",
@@ -32,7 +33,11 @@ require'nvim-treesitter.configs'.setup{
     },
     },
     indent = {
-    enable = true
+        enable = true
+    },
+    autotag = {
+        eneable = true,
+        filetypes = {"html", "xml"}
     }
 }
 
@@ -41,5 +46,5 @@ require'nvim-treesitter.configs'.setup{
 end
 
 return {
-init = init
+    init = init
 }
