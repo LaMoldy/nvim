@@ -38,7 +38,7 @@ require'nvim-treesitter.configs'.setup{
 }
 
 require('nvim-ts-autotag').setup({
-    filetypes = { "html" , "xml" },
+    filetypes = { "html" , "xml", "jsx", "tsx", "js" },
 })
 --vim.cmd[[set foldmethod=expr]]
 --vim.cmd[[set foldexpr=nvim_treesitter#foldexpr()]]
