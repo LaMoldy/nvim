@@ -67,14 +67,27 @@ local function packer_startup()
         end
     }
 
-    -- lsp
+    -- Language Servers
     use {
+        'lspcontainers/lspcontainers.nvim',
+        requires = {
         'neovim/nvim-lspconfig',
+        'nvim-lua/lsp_extensions.nvim',
+        },
         config = function ()
-          require'LaMoldy.plugins.lspconfig'.init()
+        require'lspcontainers'.setup({
+            ensure_installed = {
+            "html",
+            "pylsp",
+            "rust_analyzer",
+            "sumneko_lua",
+            "tsserver",
+            }
+        })
+
+        require'LaMoldy.plugins.lspconfig'.init()
         end
     }
-
     use 'williamboman/nvim-lsp-installer'
 
     -- completion plugins
@@ -95,6 +108,20 @@ local function packer_startup()
             require 'LaMoldy.plugins.lspkind'.init()
         end
     }
+
+    use {
+        'folke/lsp-colors.nvim',
+        config = function()
+          require("lsp-colors").setup()
+        end
+      }
+    
+      use {
+        'voldikss/vim-floaterm',
+        config = function ()
+          require'LaMoldy.plugins.floaterm'.init()
+        end
+      }
 end
 
 local function init()

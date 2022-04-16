@@ -8,7 +8,6 @@ local function init()
           maxwidth = 50,
           menu = ({
             buffer = "[Buffer]",
-            cmp_tabnine = "[T9]",
             nvim_lsp = "[LSP]",
             nvim_lua = "[Lua]",
             treesitter = "[TS]",
@@ -34,7 +33,6 @@ local function init()
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
       },
       sources = {
-        { name = 'cmp_tabnine' },
         { name = 'nvim_lsp' },
         { name = 'nvim_lua' },
         { name = 'treesitter' },

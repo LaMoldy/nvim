@@ -2,23 +2,14 @@ local function init()
 require 'nvim-treesitter.install'.compilers = { "clang" }
 require'nvim-treesitter.configs'.setup{
     ensure_installed = {
-        'bash',
         'css',
-        'dockerfile',
-        'go',
-        'gomod',
-        'graphql',
         'html',
         'javascript',
-        'jsdoc',
         'json',
-        'lua',
         'python',
         'rust',
-        'svelte',
         'tsx',
         'typescript',
-        'yaml',
     },
     highlight = {
         enable = true

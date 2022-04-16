@@ -8,7 +8,7 @@ end
 
 local function set_vim_o()
     local settings = {
-        softtabstop = 4,
+        softtabstop = 2,
         errorbells = false,
         smartindent = true,
         backup = false,
