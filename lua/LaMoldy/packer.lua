@@ -24,10 +24,16 @@ local function packer_startup()
     use 'wbthomason/packer.nvim'
 
     -- Themes
-    use {
+    --[[use {
         'folke/tokyonight.nvim',
         config = function ()
             require'LaMoldy.plugins.tokyonight'.init()
+        end
+    }]]--
+    use { 
+        'luisiacc/gruvbox-baby',
+        config = function ()
+            require'LaMoldy.plugins.gruvbox'.init()
         end
     }
 
