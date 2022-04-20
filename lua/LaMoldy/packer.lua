@@ -79,6 +79,7 @@ local function packer_startup()
         requires = {
         'neovim/nvim-lspconfig',
         'nvim-lua/lsp_extensions.nvim',
+        'simrat39/rust-tools.nvim',
         },
         config = function ()
         require'lspcontainers'.setup({

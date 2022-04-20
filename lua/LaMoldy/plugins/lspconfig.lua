@@ -70,6 +70,7 @@ local function on_attach(client, bufnr)
       "jdtls",
       "omnisharp",
       "volar",
+      "rust_analyzer"
     }
   
     for _, server in pairs(lspconfig_servers) do

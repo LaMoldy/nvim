@@ -20,6 +20,14 @@ lsp_installer.on_server_ready(function(server)
     local pyright_opts = require "LaMoldy.settings.pyright"
     opts = vim.tbl_deep_extend("force", pyright_opts, opts)
   end
+  
+  if server.name == "rust_analyzer" then
+    require('rust-tools').setup {
+      server = vim.tbl_deep_extend("force", server:get_default_options(), opts),
+    }
+    server:attach_buffers()
+    require("rust-tools").start_standalone_if_required()
+  end
 
   -- This setup() function is exactly the same as lspconfig's setup function.
   -- Refer to https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
