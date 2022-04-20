@@ -174,6 +174,11 @@ _G.packer_plugins = {
     path = "C:\\Users\\Nikk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\popup.nvim",
     url = "https://github.com/nvim-lua/popup.nvim"
   },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\Nikk\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
+  },
   ["telescope.nvim"] = {
     config = { "\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30LaMoldy.plugins.telescope\frequire\0" },
     loaded = true,
@@ -202,18 +207,18 @@ time([[Config for nvim-cmp]], false)
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\2\nG\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\31LaMoldy.plugins.treesitter\frequire\0", "config", "nvim-treesitter")
 time([[Config for nvim-treesitter]], false)
--- Config for: gruvbox-baby
-time([[Config for gruvbox-baby]], true)
-try_loadstring("\27LJ\2\nD\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\28LaMoldy.plugins.gruvbox\frequire\0", "config", "gruvbox-baby")
-time([[Config for gruvbox-baby]], false)
--- Config for: vim-floaterm
-time([[Config for vim-floaterm]], true)
-try_loadstring("\27LJ\2\nE\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\29LaMoldy.plugins.floaterm\frequire\0", "config", "vim-floaterm")
-time([[Config for vim-floaterm]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\2\nF\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\30LaMoldy.plugins.telescope\frequire\0", "config", "telescope.nvim")
 time([[Config for telescope.nvim]], false)
+-- Config for: vim-floaterm
+time([[Config for vim-floaterm]], true)
+try_loadstring("\27LJ\2\nE\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\29LaMoldy.plugins.floaterm\frequire\0", "config", "vim-floaterm")
+time([[Config for vim-floaterm]], false)
+-- Config for: gruvbox-baby
+time([[Config for gruvbox-baby]], true)
+try_loadstring("\27LJ\2\nD\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\tinit\28LaMoldy.plugins.gruvbox\frequire\0", "config", "gruvbox-baby")
+time([[Config for gruvbox-baby]], false)
 -- Config for: lspcontainers.nvim
 time([[Config for lspcontainers.nvim]], true)
 try_loadstring("\27LJ\2\n¿\1\0\0\4\0\b\0\0146\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\2B\0\2\0016\0\0\0'\2\6\0B\0\2\0029\0\a\0B\0\1\1K\0\1\0\tinit\30LaMoldy.plugins.lspconfig\21ensure_installed\1\0\0\1\6\0\0\thtml\npylsp\18rust_analyzer\16sumneko_lua\rtsserver\nsetup\18lspcontainers\frequire\0", "config", "lspcontainers.nvim")
