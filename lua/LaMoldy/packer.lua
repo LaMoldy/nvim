@@ -23,6 +23,17 @@ local function packer_startup()
     -- Packer
     use 'wbthomason/packer.nvim'
 
+    -- Tab lines
+    use 'lukas-reineke/indent-blankline.nvim'
+
+    -- Powerline status bar
+    use {
+        'hoob3rt/lualine.nvim',
+        config = function ()
+        require'LaMoldy.plugins.lualine'.init()
+        end
+    }
+
     -- Themes
     --[[use {
         'folke/tokyonight.nvim',
@@ -59,7 +70,6 @@ local function packer_startup()
             require'LaMoldy.plugins.treesitter'.init()
         end
     }
-
 
     -- Telescope
     use 'nvim-lua/popup.nvim'

@@ -1,7 +1,3 @@
-local function set_augroup()
-   -- vim.api.nvim_command("autocmd BufWritePre * %s/\s\+$//e")
-end
-
 local function set_vim_g()
     vim.g.mapleader = " "
 end
@@ -65,7 +61,6 @@ local function set_keymaps()
 end
 
 local function init()
-    set_augroup()
     set_vim_g()
     set_vim_o()
     set_vim_wo()
