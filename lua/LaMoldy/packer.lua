@@ -48,6 +48,9 @@ local function packer_startup()
         end
     }
 
+    -- Starting dashboard
+    use 'mhinz/vim-startify'
+
     -- Fuzzy Finder
     use { 
         'junegunn/fzf', 
