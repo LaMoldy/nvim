@@ -1,154 +1,46 @@
-local cmd = vim.api.nvim_command
-local fn = vim.fn
-local packer = nil
-
-local function packer_verify()
-    local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
-    if fn.empty(fn.glob(install_path)) > 0 then
-        fn.system({'git', 'clone', 'https://github.com/wbthomason/packer.nvim', install_path})
-        cmd 'packadd packer.nvim'
-    end
+local ok, packer = pcall(require, 'packer')
+if (not ok) then
+    print('packer is not installed')
+    return
 end
 
-local function packer_startup()
-    if packer == nil then
-        packer = require'packer'
-        packer.init()
-    end
+vim.cmd [[packadd packer.nvim]]
 
-    local use = packer.use
-    packer.reset()
-
-    -- Packer
-    use 'wbthomason/packer.nvim'
-
-    -- Tab lines
-    use 'lukas-reineke/indent-blankline.nvim'
-
-    -- Powerline status bar
-    use {
-        'hoob3rt/lualine.nvim',
-        config = function ()
-        require'LaMoldy.plugins.lualine'.init()
-        end
-    }
-
-    -- Themes
-    --[[use {
-        'folke/tokyonight.nvim',
-        config = function ()
-            require'LaMoldy.plugins.tokyonight'.init()
-        end
-    }]]--
-    use { 
-        'luisiacc/gruvbox-baby',
-        config = function ()
-            require'LaMoldy.plugins.gruvbox'.init()
-        end
-    }
-
-    -- Starting dashboard
-    use 'mhinz/vim-startify'
-
-    -- Fuzzy Finder
-    use { 
-        'junegunn/fzf', 
-        run = function() 
-            vim.fn['fzf#install']() 
-        end 
-    }
-
-    -- Plenary
-    use 'nvim-lua/plenary.nvim'
-
-    -- File explorer
-    use 'scrooloose/nerdtree'
-
-    -- Treesitter
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = 'TSUpdate',
-        config = function ()
-            require'LaMoldy.plugins.treesitter'.init()
-        end
-    }
-
-    -- Telescope
-    use 'nvim-lua/popup.nvim'
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {
-            'windwp/nvim-ts-autotag'
-        },
-        config = function ()
-            require'LaMoldy.plugins.telescope'.init()
-        end
-    }
-
-    -- Language Servers
-    use {
-        'lspcontainers/lspcontainers.nvim',
-        requires = {
-        'neovim/nvim-lspconfig',
-        'nvim-lua/lsp_extensions.nvim',
-        'simrat39/rust-tools.nvim',
-        },
-        config = function ()
-        require'lspcontainers'.setup({
-            ensure_installed = {
-            "html",
-            "pylsp",
-            "rust_analyzer",
-            "sumneko_lua",
-            "tsserver",
-            }
-        })
-
-        require'LaMoldy.plugins.lspconfig'.init()
-        end
-    }
-    use 'williamboman/nvim-lsp-installer'
-
-    -- completion plugins
-    use {
-        'hrsh7th/nvim-cmp', -- Completion plugin
-        requires = {
-            'hrsh7th/cmp-nvim-lsp',
-            'onsails/lspkind-nvim',
-            'hrsh7th/cmp-cmdline',
-            'hrsh7th/cmp-path',
-            'hrsh7th/cmp-nvim-lsp',
-            'hrsh7th/cmp-vsnip',
-            'hrsh7th/vim-vsnip',
-            'ray-x/cmp-treesitter',
-        },
-        config = function ()
-            require 'LaMoldy.plugins.cmp'.init()
-            require 'LaMoldy.plugins.lspkind'.init()
-        end
-    }
-
-    use {
-        'folke/lsp-colors.nvim',
-        config = function()
-          require("lsp-colors").setup()
-        end
-      }
-    
-      use {
-        'voldikss/vim-floaterm',
-        config = function ()
-          require'LaMoldy.plugins.floaterm'.init()
-        end
-      }
-end
-
-local function init()
-    packer_verify()
-    packer_startup()
-end
-
-return {
-    init = init,
-}
+packer.startup(function(use)
+    use 'wbthomason/packer.nvim' -- Packer
+    use 'lukas-reineke/indent-blankline.nvim' -- Indent Lines
+    use 'nvim-lualine/lualine.nvim' -- Status Line
+    use 'folke/tokyonight.nvim' -- Tokyonight Theme
+    use 'luisiacc/gruvbox-baby' -- Gruvbox Theme
+    use 'catppuccin/nvim' -- Catppuccin Theme
+    use 'arcticicestudio/nord-vim'
+    use 'preservim/nerdtree' -- File Exploreer Sidebar
+    use 'voldikss/vim-floaterm' -- Float term
+    use 'windwp/nvim-autopairs' -- Auto pairs
+    use 'windwp/nvim-ts-autotag' -- Auto tags
+    use { 'nvim-treesitter/nvim-treesitter', run = 'TSUpdate' } -- Treesitter
+    use { 'junegunn/fzf', run = 'fzf#install' } -- Fuzzy Finder
+    use 'nvim-telescope/telescope.nvim' -- Telescope
+    use 'nvim-telescope/telescope-file-browser.nvim' -- Telescope
+    use 'nvim-lua/popup.nvim' -- Popups
+    use 'nvim-lua/plenary.nvim' -- Plenary
+    use 'folke/lsp-colors.nvim' -- LSP Colours
+    -- use { 'glepnir/lspsaga.nvim', branch = 'main' }
+    use 'williamboman/mason.nvim' -- Lsp insaller
+    use 'williamboman/mason-lspconfig.nvim' -- Lsp installer
+    use 'jose-elias-alvarez/null-ls.nvim' -- Formatter
+    use 'onsails/lspkind-nvim' -- Lsp symbols
+    use 'L3MON4D3/LuaSnip' -- Lua snip
+    use 'hrsh7th/cmp-buffer' -- Buffer completion
+    use 'hrsh7th/cmp-nvim-lsp' -- Nvim source for LSP
+    use 'hrsh7th/nvim-cmp' -- Completion
+    use 'neovim/nvim-lspconfig' -- LSP
+    use 'kyazdani42/nvim-web-devicons' -- File icons
+    use 'folke/zen-mode.nvim' -- Zen mode
+    use 'akinsho/nvim-bufferline.lua'
+    use 'MunifTanjim/prettier.nvim'
+    use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+    })
+end)
