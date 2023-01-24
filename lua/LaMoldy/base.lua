@@ -1,5 +1,5 @@
 -- Autocmd
-vim.cmd('autocmd!')
+vim.cmd('autocmd Syntax * syn match ExtraWhitespace /\\s\\+$\\| \\+\\ze\\t/')
 
 -- Encoding Settings
 vim.scriptencoding = 'utf-8'
@@ -21,16 +21,17 @@ vim.opt.termguicolors = true
 vim.opt.winblend      = 0
 vim.opt.wildoptions   = 'pum'
 vim.opt.pumblend      = 3
+vim.opt.pumheight     = 10
 vim.wo.relativenumber = true
-vim.opt.colorcolumn   = '80'
+vim.opt.colorcolumn   = '120'
 
 -- Editing Settings
 vim.opt.autoindent  = true
 vim.opt.breakindent = true
 vim.opt.expandtab   = true
 vim.opt.smarttab    = true
-vim.opt.shiftwidth  = 2
-vim.opt.tabstop     = 2
+vim.opt.shiftwidth  = 4
+vim.opt.tabstop     = 4
 vim.opt.ai          = true
 vim.opt.si          = true
 
@@ -47,3 +48,6 @@ vim.opt.formatoptions:append { 'r' }
 vim.cmd("set noswapfile")
 vim.cmd("let &t_SI = \"\\e[2 q\"")
 vim.cmd("let &t_EI = \"\\e[2 q\"")
+vim.opt.listchars = { eol='↩', tab=">>" }
+
+vim.opt.list = true
