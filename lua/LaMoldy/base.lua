@@ -48,6 +48,6 @@ vim.opt.formatoptions:append { 'r' }
 vim.cmd("set noswapfile")
 vim.cmd("let &t_SI = \"\\e[2 q\"")
 vim.cmd("let &t_EI = \"\\e[2 q\"")
-vim.opt.listchars = { eol='↩', tab=">>" }
+vim.opt.listchars = { eol='↩', tab="  " }
 
 vim.opt.list = true
