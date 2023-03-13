@@ -71,7 +71,7 @@ return {
     local lspconfig_servers = {
       "tsserver",
       "prismals",
-      "sumneko_lua",
+      "lua_ls",
       "omnisharp",
       "cssls",
       "pyright",
