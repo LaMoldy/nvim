@@ -1,6 +1,3 @@
--- Autocmd
-vim.cmd('autocmd Syntax * syn match ExtraWhitespace /\\s\\+$\\| \\+\\ze\\t/')
-
 -- Encoding Settings
 vim.scriptencoding = 'utf-8'
 vim.opt.encoding   = 'utf-8'

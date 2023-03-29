@@ -1,4 +1,5 @@
+print("Hello, Config")
+require('config.autocommands')
 require('config.options')
-require('config.autocmds')
 require('config.keymaps')
 require('config.lazy')
