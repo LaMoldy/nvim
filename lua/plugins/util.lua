@@ -4,4 +4,7 @@ return {
 
   -- makes some plugins dot-repeatable like leap
   { "tpope/vim-repeat", event = "VeryLazy" },
+
+  -- makes a float term
+  {'voldikss/vim-floaterm'}
 }

@@ -28,9 +28,9 @@ map('n', '<C-a>', 'gg<S-v>G', { noremap = true }) -- Selects all text
 map('n', '+', '<C-a>', { noremap = true })
 map('n', '-', '<C-x>', { noremap = true })
 
--- NerdTree
-map('n', '<leader>tt', ':NERDTreeToggle<CR>', { noremap = true })
-map('n', '<leader>pv', ':NERDTreeFind<CR>', { noremap = true, silent = true })
+-- Neo Tree
+map('n', '<leader>tt', ':Neotree toggle<CR>', { noremap = true })
+-- map('n', '<leader>pv', ':NERDTreeFind<CR>', { noremap = true, silent = true })
 
 -- Float term
 map('n', '<leader>lg', '<CMD>FloatermNew --autoclose=2 --height=0.9 --width=0.9 lazygit<CR>', { noremap = true })
