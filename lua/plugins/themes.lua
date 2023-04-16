@@ -1,5 +1,5 @@
 return {
-  {
+{
     "folke/tokyonight.nvim",
     lazy = true,
     priority = 1000,
@@ -34,15 +34,18 @@ return {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
+    priority = 1000,
     config = function()
+      local ok, catppuccin = pcall(require, 'catppuccin')
+      if (not ok) then return end
+
+      catppuccin.setup({
+        flavour = "macchiato",
+        transparent_background = true,
+        term_colors = true,
+        no_italic = true,
+      })
       vim.cmd("colorscheme catppuccin")
-    end
-  },
-  {
-    "savq/melange-nvim",
-    lazy = false,
-    config = function()
-      vim.cmd("colorscheme melange")
     end
   },
   {
@@ -50,7 +53,7 @@ return {
     dependencies = {
       "tjdevries/colorbuddy.nvim"
     },
-    lazy = true,
+    lazy = false,
     priority = 1000,
     config = function ()
 
@@ -85,8 +88,5 @@ return {
 
       vim.cmd("colorscheme neosolarized")
     end
-  },
-  {
-
   },
 }

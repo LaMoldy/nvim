@@ -1,10 +1,5 @@
 return {
-  -- library used by other plugins
-  { "nvim-lua/plenary.nvim", lazy = true },
-
-  -- makes some plugins dot-repeatable like leap
-  { "tpope/vim-repeat", event = "VeryLazy" },
-
-  -- makes a float term
-  {'voldikss/vim-floaterm'}
+  { "folke/zen-mode.nvim" },
+  { "voldikss/vim-floaterm" },
+  {  "nvim-tree/nvim-web-devicons", opt = true }
 }

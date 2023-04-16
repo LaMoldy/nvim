@@ -28,9 +28,9 @@ map('n', '<C-a>', 'gg<S-v>G', { noremap = true }) -- Selects all text
 map('n', '+', '<C-a>', { noremap = true })
 map('n', '-', '<C-x>', { noremap = true })
 
--- Neo Tree
-map('n', '<leader>tt', ':Neotree toggle<CR>', { noremap = true })
--- map('n', '<leader>pv', ':NERDTreeFind<CR>', { noremap = true, silent = true })
+-- Nvim tree
+map('n', '<leader>tt', ':NvimTreeToggle<CR>', { noremap = true })
+map('n', '<leader>pv', ':NvimTreeFindFileToggle<CR>', { noremap = true, silent = true })
 
 -- Float term
 map('n', '<leader>lg', '<CMD>FloatermNew --autoclose=2 --height=0.9 --width=0.9 lazygit<CR>', { noremap = true })
@@ -52,9 +52,3 @@ map('n', 'gr', '<Cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
 -- zenmode:
 map('n', '<C-w>o', '<cmd>ZenMode<cr>', { silent = true })
 
--- bufferline
-map('n', '<Tab>', '<Cmd>BufferLineCycleNext<CR>', {})
-map('n', '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', {})
-
--- Prettier
-map('n', '<Leader>fd', ':lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
