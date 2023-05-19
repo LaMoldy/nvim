@@ -52,3 +52,13 @@ map('n', 'gr', '<Cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
 -- zenmode:
 map('n', '<C-w>o', '<cmd>ZenMode<cr>', { silent = true })
 
+-- Fugitive
+map('n', '<leader>gh', '<Cmd>Git<CR>', { noremap = true, silent = true })
+map('n', '<leader>gp', '<Cmd>Git push<CR>', { noremap = true, silent = true })
+
+-- Harpoon
+map('n', 'hm', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
+map('n', 'ha', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = false })
+map('n', 'hn', ':lua require("harpoon.ui").nav_next()<CR>', { noremap = true, silent = true })
+map('n', 'hp', ':lua require("harpoon.ui").nav_prev()<CR>', { noremap = true, silent = true })
+map('n', 'ht', '<Cmd>Telescope harpoon marks<CR>', { noremap = true, silent = true })

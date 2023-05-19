@@ -163,7 +163,8 @@ return {
         "clangd",
         "rust_analyzer",
         "html",
-        "intelephense"
+        "intelephense",
+        "elixirls",
       }
 
       protocol.CompletionItemKind = {
@@ -205,6 +206,14 @@ return {
                 workspace = { library = vim.api.nvim_get_runtime_file("", true) },
               }
             }
+        end
+
+          if server == "elixirls" then
+            -- Unix
+            -- cmd = { "/path/to/elixir-ls/language_server.sh" };
+            -- Windows
+            config.cmd = { "C:/Users/Nikk/AppData/Local/nvim-data/mason/packages/elixir-ls/language_server.bat" };
+            config.on_attach = on_attach
           end
 
           require("lspconfig").omnisharp.setup {

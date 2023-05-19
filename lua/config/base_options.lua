@@ -27,8 +27,8 @@ vim.opt.autoindent  = true
 vim.opt.breakindent = true
 vim.opt.expandtab   = true
 vim.opt.smarttab    = true
-vim.opt.shiftwidth  = 2
-vim.opt.tabstop     = 2
+vim.opt.shiftwidth  = 4
+vim.opt.tabstop     = 4
 vim.opt.ai          = true
 vim.opt.si          = true
 
@@ -48,3 +48,8 @@ vim.cmd("let &t_EI = \"\\e[2 q\"")
 vim.opt.listchars = { eol='↩', tab="  " }
 
 vim.opt.list = true
+
+-- Menu colours
+vim.api.nvim_set_hl(0, "Pmenu", { ctermbg=Gray, bg=Gray })
+vim.api.nvim_set_hl(0, "PmenuThumb", { ctermbg=White, bg=White })
+

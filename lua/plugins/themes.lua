@@ -1,7 +1,7 @@
 return {
 {
     "folke/tokyonight.nvim",
-    lazy = true,
+    lazy = false,
     priority = 1000,
     opts = { style = "moon" },
     config = function()
@@ -53,7 +53,7 @@ return {
     dependencies = {
       "tjdevries/colorbuddy.nvim"
     },
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function ()
 
@@ -89,4 +89,95 @@ return {
       vim.cmd("colorscheme neosolarized")
     end
   },
+
+  {
+    "Mofiqul/dracula.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function ()
+      require('dracula').setup({
+        transparent_bg = true,
+        italic_comment = false,
+      })
+      vim.cmd("colorscheme dracula")
+    end
+  },
+
+  {
+    "navarasu/onedark.nvim",
+    lazy = true,
+    priority = 1000,
+    config = function()
+      require("onedark").setup {
+        style = "darker",
+        transparent = true,
+        term_colors = true,
+        ending_tildes = true,
+        code_style = {
+          comments = 'none',
+          keywords = 'none',
+          functions = 'none',
+          strings = 'none',
+          variables = 'none'
+        },
+        lualine = {
+          transparent = true
+        },
+        diagnostics = {
+          darker = true,
+          undercurl = true,
+          background = true
+        }
+      }
+      require("onedark").load()
+    end
+  },
+
+  {
+    "ellisonleao/gruvbox.nvim",
+    priority = 1000,
+    lazy = true,
+    config = function()
+      require("gruvbox").setup({
+        undercurl = true,
+        underline = true,
+        bold = false,
+        italic = {
+          strings = false,
+          comments = false,
+          operators = false,
+          folds = false,
+        },
+        strikethrough = true,
+        invert_selection = false,
+        invert_signs = false,
+        invert_tabline = false,
+        invert_intend_guides = false,
+        inverse = true,
+        contrast = "soft",
+        palette_overrides = {},
+        overrides = {},
+        dim_inactive = false,
+        transparent_mode = true,
+      })
+      vim.cmd("colorscheme gruvbox")
+    end
+  },
+
+  {
+    "rose-pine/neovim",
+    lazy = true,
+    priority = 1000,
+    config = function ()
+      require("rose-pine").setup({
+        variant = "moon",
+        dark_variant = "moon",
+        disable_background = true,
+        disable_float_background = true,
+        disable_italics = true
+      })
+
+      vim.cmd("colorscheme rose-pine")
+    end
+  }
 }

@@ -27,6 +27,7 @@ return {
     lazy = true,
     event = { "BufEnter", "BufLeave" },
     config = function()
+      require("telescope").load_extension("harpoon")
       require("telescope").setup {
         defaults = {
           file_ignore_patterns = {
