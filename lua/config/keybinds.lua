@@ -28,19 +28,6 @@ map('n', '<C-a>', 'gg<S-v>G', { noremap = true }) -- Selects all text
 map('n', '+', '<C-a>', { noremap = true })
 map('n', '-', '<C-x>', { noremap = true })
 
--- Nvim tree
-map('n', '<leader>tt', ':NvimTreeToggle<CR>', { noremap = true })
-map('n', '<leader>pv', ':NvimTreeFindFileToggle<CR>', { noremap = true, silent = true })
-
--- Float term
-map('n', '<leader>lg', '<CMD>FloatermNew --autoclose=2 --height=0.9 --width=0.9 lazygit<CR>', { noremap = true })
-map('n', '<leader>rd', '<CMD>FloatermNew --autoclose=2 --height=0.9 --width=0.9 yarn dev<CR>', { noremap = true })
-map('n', '<leader>rb', '<CMD>FloatermNew --autoclose=2 --height=0.9 --width=0.9 yarn build<CR>', { noremap = true })
-
--- Telescope
-map('n', '<leader>fg', '<CMD>lua require("telescope.builtin").git_files{}<CR>', { noremap = true })
-map('n', '<leader>ff', '<CMD>lua require("telescope.builtin").find_files{ hidden = true }<CR>', { noremap = true })
-
 -- Lsp Saga
 map('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })
 map('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
@@ -49,16 +36,20 @@ map('n', '<leader>ca', '<Cmd>Lspsaga code_action<CR>', { noremap = true, silent 
 map('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', { noremap = true, silent = true })
 map('n', 'gr', '<Cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
 
--- zenmode:
-map('n', '<C-w>o', '<cmd>ZenMode<cr>', { silent = true })
-
--- Fugitive
-map('n', '<leader>gh', '<Cmd>Git<CR>', { noremap = true, silent = true })
-map('n', '<leader>gp', '<Cmd>Git push<CR>', { noremap = true, silent = true })
-
 -- Harpoon
 map('n', 'hm', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
 map('n', 'ha', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = false })
 map('n', 'hn', ':lua require("harpoon.ui").nav_next()<CR>', { noremap = true, silent = true })
 map('n', 'hp', ':lua require("harpoon.ui").nav_prev()<CR>', { noremap = true, silent = true })
 map('n', 'ht', '<Cmd>Telescope harpoon marks<CR>', { noremap = true, silent = true })
+
+-- Telescope
+map('n', '<leader>fg', '<CMD>lua require("telescope.builtin").git_files{}<CR>', { noremap = true })
+map('n', '<leader>ff', '<CMD>lua require("telescope.builtin").find_files{ hidden = true }<CR>', { noremap = true })
+
+-- Fugitive
+map('n', '<leader>gh', '<Cmd>Git<CR>', { noremap = true, silent = true })
+map('n', '<leader>gp', '<Cmd>Git push<CR>', { noremap = true, silent = true })
+
+-- Neotree
+map('n', '<leader>tt', ':Neotree toggle<CR>', { noremap = true, silent = true })

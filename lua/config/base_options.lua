@@ -1,7 +1,7 @@
 -- Encoding Settings
-vim.scriptencoding = 'utf-8'
-vim.opt.encoding   = 'utf-8'
-vim.fileencoding   = 'utf-8'
+vim.scriptencoding    = 'utf-8'
+vim.opt.encoding      = 'utf-8'
+vim.fileencoding      = 'utf-8'
 
 -- Window Settings
 vim.wo.number         = true
@@ -23,19 +23,19 @@ vim.wo.relativenumber = true
 vim.opt.colorcolumn   = '120'
 
 -- Editing Settings
-vim.opt.autoindent  = true
-vim.opt.breakindent = true
-vim.opt.expandtab   = true
-vim.opt.smarttab    = true
-vim.opt.shiftwidth  = 4
-vim.opt.tabstop     = 4
-vim.opt.ai          = true
-vim.opt.si          = true
+vim.opt.autoindent    = true
+vim.opt.breakindent   = true
+vim.opt.expandtab     = true
+vim.opt.smarttab      = true
+vim.opt.shiftwidth    = 4
+vim.opt.tabstop       = 4
+vim.opt.ai            = true
+vim.opt.si            = true
 
 -- Search Settings
-vim.opt.hlsearch   = true
-vim.opt.ignorecase = true
-vim.opt.path:append { '**' } -- Searches subfolders
+vim.opt.hlsearch      = true
+vim.opt.ignorecase    = true
+vim.opt.path:append { '**' }                     -- Searches subfolders
 vim.opt.wildignore:append { '*/node_modules/*' } -- ignores node_modules folders
 
 -- Misc Settings
@@ -45,11 +45,6 @@ vim.opt.formatoptions:append { 'r' }
 vim.cmd("set noswapfile")
 vim.cmd("let &t_SI = \"\\e[2 q\"")
 vim.cmd("let &t_EI = \"\\e[2 q\"")
-vim.opt.listchars = { eol='↩', tab="  " }
+vim.opt.listchars = { eol = '↩', tab = "  " }
 
 vim.opt.list = true
-
--- Menu colours
-vim.api.nvim_set_hl(0, "Pmenu", { ctermbg=Gray, bg=Gray })
-vim.api.nvim_set_hl(0, "PmenuThumb", { ctermbg=White, bg=White })
-

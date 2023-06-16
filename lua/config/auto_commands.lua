@@ -28,16 +28,7 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "html", "css" },
     callback = function()
-        vim.opt.shiftwidth  = 2
-        vim.opt.tabstop     = 2
+        vim.opt.shiftwidth = 2
+        vim.opt.tabstop    = 2
     end
 })
-
--- Menu colours
--- vim.api.nvim_create_autocmd("ColorScheme", {
---     pattern="default",
---     callback = function()
---         vim.api.nvim_set_hl(0, "Pmenu", { ctermbg=Gray, bg=Gray })
---         vim.api.nvim_set_hl(0, "PmenuThumb", { ctermbg=White, bg=White })
---     end,
--- })
