@@ -32,7 +32,7 @@ return {
     },
     {
         'Mofiqul/dracula.nvim',
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             local dracula = require("dracula")
@@ -48,7 +48,7 @@ return {
     },
     {
         'navarasu/onedark.nvim',
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require('onedark').setup {
