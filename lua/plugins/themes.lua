@@ -48,7 +48,7 @@ return {
     },
     {
         'navarasu/onedark.nvim',
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require('onedark').setup {
@@ -74,5 +74,13 @@ return {
 
             vim.cmd.colorscheme 'onedark'
         end,
+    },
+    {
+        "lunarvim/darkplus.nvim",
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.cmd.colorscheme 'darkplus'
+        end
     }
 }

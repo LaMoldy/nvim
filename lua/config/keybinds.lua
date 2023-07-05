@@ -51,5 +51,5 @@ map('n', '<leader>ff', '<CMD>lua require("telescope.builtin").find_files{ hidden
 map('n', '<leader>gh', '<Cmd>Git<CR>', { noremap = true, silent = true })
 map('n', '<leader>gp', '<Cmd>Git push<CR>', { noremap = true, silent = true })
 
--- Neotree
-map('n', '<leader>tt', ':Neotree toggle<CR>', { noremap = true, silent = true })
+-- Nvim-Tree
+map('n', '<leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
