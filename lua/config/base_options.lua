@@ -48,3 +48,5 @@ vim.cmd("let &t_EI = \"\\e[2 q\"")
 vim.opt.listchars = { eol = '↩', tab = "  " }
 
 vim.opt.list = true
+
+vim.opt.guicursor = "n-v-c-i:block-Cursor"

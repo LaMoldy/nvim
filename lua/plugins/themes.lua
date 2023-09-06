@@ -31,24 +31,22 @@ return {
         end,
     },
     {
-        'Mofiqul/dracula.nvim',
+        'rose-pine/neovim',
+        name = "rose-pine",
         lazy = true,
         priority = 1000,
         config = function()
-            local dracula = require("dracula")
-            dracula.setup({
-              show_end_of_buffer = true,
-              transparent_bg = false,
-              lualine_bg_color = "#44475a",
-              italic_comment = true
+            require('rose-pine').setup({
+                variant = 'moon',
+                disable_background = true,
+                disable_italics = true
             })
-
-            vim.cmd.colorscheme 'dracula'
+            vim.cmd.colorscheme "rose-pine"
         end
     },
     {
         'navarasu/onedark.nvim',
-        lazy = true,
+        lazy = false,
         priority = 1000,
         config = function()
             require('onedark').setup {
@@ -74,13 +72,5 @@ return {
 
             vim.cmd.colorscheme 'onedark'
         end,
-    },
-    {
-        "lunarvim/darkplus.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd.colorscheme 'darkplus'
-        end
     }
 }

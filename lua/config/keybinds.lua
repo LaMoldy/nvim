@@ -48,8 +48,14 @@ map('n', '<leader>fg', '<CMD>lua require("telescope.builtin").git_files{}<CR>', 
 map('n', '<leader>ff', '<CMD>lua require("telescope.builtin").find_files{ hidden = true }<CR>', { noremap = true })
 
 -- Fugitive
-map('n', '<leader>gh', '<Cmd>Git<CR>', { noremap = true, silent = true })
-map('n', '<leader>gp', '<Cmd>Git push<CR>', { noremap = true, silent = true })
+-- map('n', '<leader>gh', '<Cmd>Git<CR>', { noremap = true, silent = true })
+-- map('n', '<leader>gp', '<Cmd>Git push<CR>', { noremap = true, silent = true })
+
+-- Neogit
+map('n', '<leader>gh', '<Cmd>Neogit<CR>', { noremap = true, silent = true })
 
 -- Nvim-Tree
 map('n', '<leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+
+-- Markdown Previewer
+map('n', 'mp', ':MarkdownPreview<CR>', { noremap = true, silent = false })
