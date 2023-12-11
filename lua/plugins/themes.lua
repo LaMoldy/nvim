@@ -1,16 +1,31 @@
 return {
     {
-        "folke/tokyonight.nvim",
+        "craftzdog/solarized-osaka.nvim",
         lazy = true,
         priority = 1000,
-        opts = { style = "moon" },
+        config = function()
+            local ok, solarized_osaka = pcall(require, "solarized-osaka")
+            if (not ok) then return end
+
+            solarized_osaka.setup({
+                transparent = false,
+            })
+
+            vim.cmd.colorscheme "solarized-osaka"
+        end
+    },
+    {
+        "folke/tokyonight.nvim",
+        lazy = false,
+        priority = 1000,
+        opts = { style = "storm" },
         config = function()
             local ok, tokyonight = pcall(require, 'tokyonight')
             if (not ok) then return end
 
             tokyonight.setup({
-                style = "storm",
-                transparent = true,
+                style = "night",
+                transparent = false,
                 terminal_colors = true,
                 styles = {
                     comments = "italic",
@@ -25,7 +40,7 @@ return {
                     "vista_kind",
                     "terminal",
                     "packer"
-                }
+                },
             })
             vim.cmd.colorscheme "tokyonight"
         end,
@@ -46,7 +61,7 @@ return {
     },
     {
         'navarasu/onedark.nvim',
-        lazy = false,
+        lazy = true,
         priority = 1000,
         config = function()
             require('onedark').setup {
