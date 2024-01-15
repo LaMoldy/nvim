@@ -17,7 +17,7 @@ return {
         { 'L3MON4D3/LuaSnip' },
     },
     config = function()
-        local lsp = require('lsp-zero').preset({})
+        local lsp = require('lsp-zero')
 
         lsp.on_attach(function(client, bufnr)
             lsp.default_keymaps({ buffer = bufnr })
@@ -25,9 +25,11 @@ return {
 
         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
 
-        lsp.setup()
-
-        local cmp = require('cmp')
-        local cmp_action = require('lsp-zero').cmp_action()
+        require("mason").setup({})
+        require("mason-lspconfig").setup({
+            handlers = {
+                lsp.default_setup
+            }
+        })
     end
 }

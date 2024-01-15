@@ -28,13 +28,14 @@ map('n', '<C-a>', 'gg<S-v>G', { noremap = true }) -- Selects all text
 map('n', '+', '<C-a>', { noremap = true })
 map('n', '-', '<C-x>', { noremap = true })
 
--- Lsp Saga
-map('n', '<C-j>', '<Cmd>Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })
-map('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
-map('n', 'gd', '<Cmd>Lspsaga lsp_finder<CR>', { noremap = true, silent = true })
-map('n', '<leader>ca', '<Cmd>Lspsaga code_action<CR>', { noremap = true, silent = true })
-map('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', { noremap = true, silent = true })
-map('n', 'gr', '<Cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
+-- Trouble
+map('n', '<leader>dt', '<Cmd>TroubleToggle<CR>', { noremap = true, silent = true })
+map('n', '<leader>dw', '<Cmd>TroubleToggle workspace_diagnostics<CR>', { noremap = true, silent = true })
+map('n', '<leader>dd', '<Cmd>TroubleToggle document_diagnostics<CR>', { noremap = true, silent = true })
+map('n', '<leader>qf', '<Cmd>TroubleToggle quickfix<CR>', { noremap = true, silent = true })
+map('n', '<leader>ll', '<Cmd>TroubleToggle loclist<CR>', { noremap = true, silent = true })
+map('n', 'gr', '<Cmd>TroubleToggle lsp_references<CR>', { noremap = true, silent = true })
+
 
 -- Harpoon
 map('n', 'hm', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
@@ -47,10 +48,6 @@ map('n', 'ht', '<Cmd>Telescope harpoon marks<CR>', { noremap = true, silent = tr
 map('n', '<leader>fg', '<CMD>lua require("telescope.builtin").git_files{}<CR>', { noremap = true })
 map('n', '<leader>ff', '<CMD>lua require("telescope.builtin").find_files{ hidden = true }<CR>', { noremap = true })
 
--- Fugitive
--- map('n', '<leader>gh', '<Cmd>Git<CR>', { noremap = true, silent = true })
--- map('n', '<leader>gp', '<Cmd>Git push<CR>', { noremap = true, silent = true })
-
 -- Neogit
 map('n', '<leader>gh', '<Cmd>Neogit<CR>', { noremap = true, silent = true })
 
@@ -59,3 +56,6 @@ map('n', '<leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- Markdown Previewer
 map('n', 'mp', ':MarkdownPreview<CR>', { noremap = true, silent = false })
+
+-- Todo
+map('n', 'td', ':TodoLocList<CR>', { noremap = true, silent = true })
