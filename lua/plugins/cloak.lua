@@ -3,7 +3,9 @@ return {
     lazy = true,
     event = "BufEnter",
     config = function()
-        require("cloak").setup({
+        local ok, cloak = pcall(require, "cloak")
+        if (not ok) then return end
+        cloak.setup({
             enabled = true,
             cloak_character = "*",
             highlight_group = "Comment",
@@ -16,6 +18,5 @@ return {
                 }
             }
         })
-        vim.cmd("CloakEnable")
     end
 }
