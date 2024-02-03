@@ -9,7 +9,7 @@ return {
         if (not ok) then return end
         tokyonight.setup({
             style = "storm",
-            transparent = false,
+            transparent = true,
             terminal_colors = true,
             styles = {
                 comments = {
@@ -23,7 +23,9 @@ return {
                 },
                 variables = {
                     italic = false
-                }
+                },
+                sidebars = "transparent",
+                floats = "transparent"
             }
         })
 

@@ -14,7 +14,6 @@ return {
 
         blankline.setup {
             indent = {
-                highlight = highlight,
                 char = "│",
                 tab_char = nil,
                 priority = 1,
@@ -22,7 +21,6 @@ return {
                 repeat_linebreak = true
             },
             whitespace = {
-                highlight = highlight,
                 remove_blankline_trail = false
             },
             scope = { enabled = false }

@@ -52,7 +52,7 @@ map('n', '<leader>ff', '<CMD>lua require("telescope.builtin").find_files{ hidden
 map('n', '<leader>gh', '<Cmd>Neogit<CR>', { noremap = true, silent = true })
 
 -- Nvim-Tree
-map('n', '<leader>tt', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
+map('n', '<leader>ft', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
 -- Markdown Previewer
 map('n', 'mp', ':MarkdownPreview<CR>', { noremap = true, silent = false })
