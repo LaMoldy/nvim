@@ -8,30 +8,24 @@ return {
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "saadparwaiz1/cmp_luasnip",
-        "onsails/lspkind.nvim",
         "L3MON4D3/LuaSnip",
+        "onsails/lspkind.nvim",
         "rafamadriz/friendly-snippets",
     },
     opts = function()
         local cmp = require("cmp")
         local lspkind = require("lspkind")
         return {
-            completion = {
-                completeopt = "menu,menuone,noinsert",
-                winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-                col_offset = -3,
-                side_padding = 0
+            window = {
+                completion = cmp.config.window.bordered(),
+                documentation = cmp.config.window.bordered(),
             },
             formatting = {
-                fields = { "kind", "abbr", "menu" },
+                expandable_indicator = true,
                 format = lspkind.cmp_format({
                     mode = "symbol_text",
                     maxwidth = 50,
-                    ellipsis_char = "...",
-
-                    before = function(entry, vim_item)
-                        return vim_item
-                    end
+                    ellipsis_char = "..."
                 })
             },
             snippet = {
@@ -54,14 +48,12 @@ return {
             }),
             sources = cmp.config.sources({
                 { name = "nvim_lsp" },
-                { name = "luasnip" },
-                { name = "buffer" },
-                { name = "path" },
+                { name = "luasnip", max_item_count = 3 },
+                { name = "buffer",  max_item_count = 5 },
+                { name = "path",    max_item_count = 3 },
             }),
             experimental = {
-                ghost_text = {
-                    hl_group = "LspCodeLens",
-                },
+                ghost_text = true,
             },
         }
     end,

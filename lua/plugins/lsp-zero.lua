@@ -24,11 +24,30 @@ return {
         end)
 
         require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
+        require('lspconfig').gopls.setup({
+            settings = {
+                gopls = {
+                    gofumpt = true,
+                }
+            }
+        })
 
-        require("mason").setup({})
+        require("mason").setup({
+            ui = {
+                border = "rounded"
+            }
+        })
+
         require("mason-lspconfig").setup({
             handlers = {
-                lsp.default_setup
+                lsp.default_setup,
+            }
+        })
+
+        require("lspconfig.ui.windows").default_options.border = "rounded"
+        vim.diagnostic.config({
+            float = {
+                border = "rounded"
             }
         })
     end
