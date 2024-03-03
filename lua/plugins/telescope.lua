@@ -14,7 +14,8 @@ return {
                         "build",
                         ".git",
                         ".sl",
-                        "target"
+                        "target",
+                        "vendor"
                     }
                 },
             }
