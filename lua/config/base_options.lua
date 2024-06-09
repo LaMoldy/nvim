@@ -17,8 +17,8 @@ vim.opt.cursorline    = true
 vim.opt.termguicolors = true
 vim.opt.winblend      = 0
 vim.opt.wildoptions   = 'pum'
-vim.opt.pumblend      = 3
-vim.opt.pumheight     = 10
+vim.opt.pumblend      = 0
+vim.opt.pumheight     = 100
 vim.wo.relativenumber = true
 vim.opt.colorcolumn   = '120'
 

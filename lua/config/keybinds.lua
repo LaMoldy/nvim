@@ -57,5 +57,11 @@ map('n', '<leader>ft', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 -- Markdown Previewer
 map('n', 'mp', ':MarkdownPreview<CR>', { noremap = true, silent = false })
 
+-- Lsp Saga
+map('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
+map('n', '<leader>ca', '<Cmd>Lspsaga code_action<CR>', { noremap = true, silent = true })
+map('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', { noremap = true, silent = true })
+map('n', 'gr', '<Cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
+
 -- Todo
 map('n', 'td', ':TodoLocList<CR>', { noremap = true, silent = true })

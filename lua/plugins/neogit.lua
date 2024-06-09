@@ -6,12 +6,6 @@ return {
     "nvim-telescope/telescope.nvim",
     "ibhagwan/fzf-lua",
   },
-  config = function()
-    local ok, neogit = pcall(require, "neogit")
-    if (not ok) then return end
-
-    neogit.setup {
-      auto_show_console = false
-    }
-  end
+  branch = "nightly",
+  config = true
 }

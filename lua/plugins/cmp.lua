@@ -47,6 +47,7 @@ return {
                 }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
             }),
             sources = cmp.config.sources({
+                { name = "codeium" },
                 { name = "nvim_lsp" },
                 { name = "luasnip", max_item_count = 3 },
                 { name = "buffer",  max_item_count = 5 },
