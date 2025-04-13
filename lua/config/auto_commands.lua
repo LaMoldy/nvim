@@ -23,12 +23,3 @@ vim.api.nvim_create_autocmd({ "VimResized" }, {
         vim.cmd("tabdo wincmd =")
     end,
 })
-
--- Sets tab size based on file type
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "html", "css" },
-    callback = function()
-        vim.opt.shiftwidth = 2
-        vim.opt.tabstop    = 2
-    end
-})

@@ -32,6 +32,8 @@ return {
             }
         })
 
+        require('lspconfig').ols.setup{}
+
         require("mason").setup({
             ui = {
                 border = "rounded"

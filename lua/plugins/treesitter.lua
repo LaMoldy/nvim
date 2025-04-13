@@ -8,31 +8,7 @@ return {
         highlight = { enable = true },
         indent = { enable = true, disable = { "python" } },
         context_commentstring = { enable = true, enable_autocmd = false },
-        ensure_isntalled = {
-            "bash",
-            "c",
-            "cpp",
-            "csharp",
-            "rust",
-            "java",
-            "go",
-            "help",
-            "html",
-            "javascript",
-            "json",
-            "lua",
-            "luadoc",
-            "luap",
-            "markdown",
-            "mardown_inline",
-            "python",
-            "query",
-            "regex",
-            "tsx",
-            "typescript",
-            "vim",
-            "yaml"
-        },
+        auto_install = true,
         incremental_selection = {
             enable = true,
             keymaps = {
@@ -45,6 +21,7 @@ return {
     },
     config = function(_, opts)
         require('nvim-treesitter.install').compilers = { "clang" }
+        require("nvim-treesitter.install").prefer_git = false
         require('nvim-treesitter.configs').setup(opts)
     end
 }

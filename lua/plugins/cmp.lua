@@ -15,7 +15,7 @@ return {
     opts = function()
         local cmp = require("cmp")
         local lspkind = require("lspkind")
-        return {
+        cmp.setup({
             window = {
                 completion = cmp.config.window.bordered(),
                 documentation = cmp.config.window.bordered(),
@@ -28,7 +28,7 @@ return {
                     ellipsis_char = "..."
                 })
             },
-            snippet = {
+            snipped = {
                 expand = function(args)
                     require("luasnip").lsp_expand(args.body)
                 end,
@@ -38,7 +38,6 @@ return {
                 ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
                 ["<C-b>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
-                ["<C-<Space>>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
                 ["<S-CR>"] = cmp.mapping.confirm({
@@ -56,6 +55,6 @@ return {
             experimental = {
                 ghost_text = true,
             },
-        }
-    end,
+        })
+    end
 }

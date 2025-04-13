@@ -27,41 +27,13 @@ map('n', 'sv', ':vsplit<Return><C-w>w', { noremap = true, silent = true })
 map('n', '<C-a>', 'gg<S-v>G', { noremap = true }) -- Selects all text
 map('n', '+', '<C-a>', { noremap = true })
 map('n', '-', '<C-x>', { noremap = true })
-
--- Trouble
-map('n', '<leader>dt', '<Cmd>TroubleToggle<CR>', { noremap = true, silent = true })
-map('n', '<leader>dw', '<Cmd>TroubleToggle workspace_diagnostics<CR>', { noremap = true, silent = true })
-map('n', '<leader>dd', '<Cmd>TroubleToggle document_diagnostics<CR>', { noremap = true, silent = true })
-map('n', '<leader>qf', '<Cmd>TroubleToggle quickfix<CR>', { noremap = true, silent = true })
-map('n', '<leader>ll', '<Cmd>TroubleToggle loclist<CR>', { noremap = true, silent = true })
-map('n', 'gr', '<Cmd>TroubleToggle lsp_references<CR>', { noremap = true, silent = true })
-
-
--- Harpoon
-map('n', 'hm', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
-map('n', 'ha', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = false })
-map('n', 'hn', ':lua require("harpoon.ui").nav_next()<CR>', { noremap = true, silent = true })
-map('n', 'hp', ':lua require("harpoon.ui").nav_prev()<CR>', { noremap = true, silent = true })
-map('n', 'ht', '<Cmd>Telescope harpoon marks<CR>', { noremap = true, silent = true })
-
--- Telescope
-map('n', '<leader>fg', '<CMD>lua require("telescope.builtin").git_files{}<CR>', { noremap = true })
-map('n', '<leader>ff', '<CMD>lua require("telescope.builtin").find_files{ hidden = true }<CR>', { noremap = true })
-
--- Neogit
-map('n', '<leader>gh', '<Cmd>Neogit<CR>', { noremap = true, silent = true })
+map('i', 'jk', '<C-[>', { noremap = true, silent = true })
 
 -- Nvim-Tree
 map('n', '<leader>ft', ':NvimTreeToggle<CR>', { noremap = true, silent = true })
 
--- Markdown Previewer
-map('n', 'mp', ':MarkdownPreview<CR>', { noremap = true, silent = false })
-
--- Lsp Saga
-map('n', 'K', '<Cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
-map('n', '<leader>ca', '<Cmd>Lspsaga code_action<CR>', { noremap = true, silent = true })
-map('n', 'gp', '<Cmd>Lspsaga peek_definition<CR>', { noremap = true, silent = true })
-map('n', 'gr', '<Cmd>Lspsaga rename<CR>', { noremap = true, silent = true })
-
--- Todo
-map('n', 'td', ':TodoLocList<CR>', { noremap = true, silent = true })
+-- Harpoon
+map('n', 'ha', ':lua require("harpoon.mark").add_file()<CR>', { noremap = true, silent = true })
+map('n', 'hm', ':lua require("harpoon.ui").toggle_quick_menu()<CR>', { noremap = true, silent = true })
+map('n', 'hn', ':lua require("harpoon.ui").nav_next()<CR>', { noremap = true, silent=true })
+map('n', 'hp', ':lua require("harpoon.ui").nav_prev()<CR>', { noremap = true, silent = true })
