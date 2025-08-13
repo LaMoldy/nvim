@@ -32,31 +32,44 @@
 --     end
 -- }
 
+-- return {
+--     "navarasu/onedark.nvim",
+--     lazy = false,
+--     priority = 1000,
+--     config = function()
+--         require("onedark").setup {
+--             style = 'warmer',
+--             term_colors = true,
+--             ending_tildes = false,
+--             code_style = {
+--                 comments = 'none',
+--                 keywords = 'none',
+--                 functions = 'none',
+--                 strings = 'none',
+--                 variables = 'none',
+--             },
+--             colors = {},
+--             highlights = {},
+--             diagnostics = {
+--                 darker = true,
+--                 undercurl = true,
+--                 background = true,
+--             },
+--         }
+
+--         vim.cmd("colorscheme onedark")
+--     end
+-- }
+
 return {
-    "navarasu/onedark.nvim",
+    "craftzdog/solarized-osaka.nvim",
     lazy = false,
     priority = 1000,
     config = function()
-        require("onedark").setup {
-            style = 'warmer',
-            term_colors = true,
-            ending_tildes = false,
-            code_style = {
-                comments = 'none',
-                keywords = 'none',
-                functions = 'none',
-                strings = 'none',
-                variables = 'none',
-            },
-            colors = {},
-            highlights = {},
-            diagnostics = {
-                darker = true,
-                undercurl = true,
-                background = true,
-            },
+        require("solarized-osaka").setup {
+            transparent = true
         }
 
-        vim.cmd("colorscheme onedark")
-    end
+        vim.cmd("colorscheme solarized-osaka")
+    end,
 }
